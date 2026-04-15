@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter Demo</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        button{
+            outline: none;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        header{
+            width: 100%;
+            height: 100px;
+            background-color: #c5c5c5;
+            line-height: 100px;
+            padding: 0 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header span{
+            position: absolute;
+            right: -90px;
+            top: 30px;
+            background-color: red;
+            color: #fff;
+            width: 250px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            transform: rotateZ(45deg);
+        }
+
+        .container{
+            width: 100%;
+            height: calc(100vh - 100px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+
+        button{
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid #000;
+            color: #000;
+            width: 60px;
+            height: 60px;
+            font-size: 32px;
+        }
+
+        #counter{
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        Flutter Demo Home Page 
+        <span>DEBUG</span>
+    </header>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <div id="counter"></div>
+        <button onclick="increase(this)" data-val="1">+</button>
+    </div>
+
+
+
+    <script>
+        let counter = document.getElementById("counter")
+        let my_num = 1
+        counter.innerHTML = my_num
+        
+        function increase(btn){
+            let data_val = parseInt(btn.getAttribute("data-val"))
+            data_val ++
+
+            counter.innerHTML = data_val
+            btn.setAttribute("data-val", data_val)
+        }
+
+        
+    </script>
+
+</body>
+
+</html>
